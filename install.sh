@@ -7,11 +7,10 @@ timedatectl set-ntp true
 
 # lsblk
 
-parted /dev/sda
-mklabel msdos
-mkpart primary ext4 1MiB 100%
-set 1 boot on
-quit
+# parted /dev/sda < partition_scheme01.txt
+parted /dev/sda mklabel msdos
+parted /dev/sda primary ext4 1MiB 100%
+parted /dev/sda set 1 boot on
 
 mkfs.ext4 /dev/sda1
 mount /dev/sda1 /mnt

@@ -1,0 +1,3 @@
+mklabel msdos
+mkpart primary ext4 1MiB 100%
+set 1 boot on
